@@ -4,8 +4,10 @@ public class  Splitwise{
         System.out.println("Tracked shared expense with friends.");
         System.out.println("");
         System.out.println("Ready.More features coming in the next lesson");
+        String payerName ="Riya";
         double totalAmount=500.0;
         int numFriends=3;
+        System.out.println(payerName );
         System.out.println(totalAmount);
         System.out.println(numFriends);
     }
