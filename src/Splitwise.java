@@ -18,7 +18,6 @@ public class  Splitwise{
             input.nextLine();
 
             switch (choice) {
-
                 case 1 -> {
                     System.out.print("Who paid? ");
                     String payerName = input.nextLine();
