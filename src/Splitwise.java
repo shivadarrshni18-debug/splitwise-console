@@ -23,20 +23,22 @@ public class  Splitwise{
 
             switch (choice) {
                 case 1 -> {
-                    System.out.print("Who paid? ");
-                    String payerName = input.nextLine();
-                    System.out.print("Total amount (₹)? ");
-                    double totalAmount = input.nextDouble();
                     if (friends.isEmpty()) {
-                        System.out.println("No friends yet. Add friends first (option 2).");
-                    } else {
+                    System.out.println("No friends yet. Add friends first (option 2).");
+                    }
+
+                   else {
+                        System.out.print("Who paid? ");
+                        String payerName = input.nextLine();
+                        System.out.print("Total amount (₹)? ");
+                        double totalAmount = input.nextDouble();
                         int numFriends = friends.size();
                         double perPersonShare = totalAmount / numFriends;
                         String expenseLine = "%s paid ₹%.2f".formatted(payerName, totalAmount);
                         String shareLine = "Each person pays: %.2f".formatted(perPersonShare);
                         System.out.println(expenseLine);
                         System.out.println(shareLine);
-                    }
+                   }
                 }
 
                 case 2->{
