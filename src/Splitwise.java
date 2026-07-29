@@ -2,6 +2,16 @@
 import java.util.Scanner;
 import java.util.ArrayList;
 public class  Splitwise{
+
+       public static void addfriends(Scanner input,ArrayList<String> friends) {
+           System.out.print("Friend name: ");
+           String friendName = input.nextLine();
+           friends.add(friendName);
+           System.out.println("Added " + friendName + ".");
+    }
+
+
+
     public static void main(String[] args){
         System.out.println("===Splitwise-console===");
         System.out.println("Tracked shared expense with friends.");
@@ -42,10 +52,7 @@ public class  Splitwise{
                 }
 
                 case 2->{
-                    System.out.print("Friend name: ");
-                    String friendName = input.nextLine();
-                    friends.add(friendName);
-                    System.out.println("Added " + friendName + ".");
+                   addfriends(input,friends);
                 }
 
                 case 3->{
