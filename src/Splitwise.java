@@ -3,10 +3,10 @@ import java.util.Scanner;
 import java.util.ArrayList;
 public class  Splitwise{
 
-       public static void addfriends(Scanner input,ArrayList<String> friends) {
+       public static void addfriends(Scanner input,ArrayList<Friend> friends) {
            System.out.print("Friend name: ");
            String friendName = input.nextLine();
-           friends.add(friendName);
+           friends.add( new Friend(friendName));
            System.out.println("Added " + friendName + ".");
     }
 
@@ -19,7 +19,7 @@ public class  Splitwise{
         System.out.println("Ready.More features coming in the next lesson");
 
         Scanner input =new Scanner(System.in);
-        ArrayList<String> friends = new ArrayList<>();
+        ArrayList<Friend> friends = new ArrayList<>();
         boolean running = true;
         while(running) {
             System.out.println("===Menu===");
@@ -59,8 +59,8 @@ public class  Splitwise{
                     if (friends.isEmpty()) {
                         System.out.println("No friends yet. Add friends first (option 2).");
                     } else {
-                        for (String name : friends) {
-                            System.out.println("- " + name);
+                        for (Friend friend : friends) {
+                            System.out.println("- " + friend.getName());
                         }
 
                     }
