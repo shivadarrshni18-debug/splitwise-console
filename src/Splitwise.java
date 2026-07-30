@@ -59,6 +59,7 @@ public class  Splitwise{
                     if (friends.isEmpty()) {
                         System.out.println("No friends yet. Add friends first (option 2).");
                     } else {
+                        System.out.println("Friends:");
                         for (Friend friend : friends) {
                             System.out.println("- " + friend.getName());
                         }
