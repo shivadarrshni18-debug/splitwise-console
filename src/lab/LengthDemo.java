@@ -2,6 +2,6 @@ package lab;
 
 public class LengthDemo {
     public static void main(String[] args){
-        System.out.println("Splitwise".length());
+        System.out.println("app.Splitwise".length());
     }
 }
