@@ -7,18 +7,30 @@ import java.util.Scanner;
 import java.util.ArrayList;
 public class  Splitwise{
 
-       public static void addfriends(Scanner input,ArrayList<Friend> friends) {
-           System.out.print("Friend name: ");
-           String friendName = input.nextLine();
-           Friend friend =new Friend(friendName);
-           friends.add(friend);
-           System.out.println("Added %s (id %d).".formatted(friend.getName() ,friend.getId()));
-    }
+     private static class FriendDisplay {
+         static String listLine(Friend friend) {
+             return "- %d:  %s.".formatted(friend.getId(), friend.getName());
+         }
+
+         static String addedMessage(Friend friend){
+             return "Added %s (id %d).".formatted(friend.getName(),friend.getId());
+         }
+     }
+
+
+         public static void addfriends(Scanner input, ArrayList<Friend> friends) {
+             System.out.print("Friend name: ");
+             String friendName = input.nextLine();
+             Friend friend = new Friend(friendName);
+             friends.add(friend);
+             System.out.println(FriendDisplay.addedMessage(friend));
+         }
+
 
 
 
     public static void main(String[] args){
-        System.out.println("===app.Splitwise-console===");
+        System.out.println("===Splitwise-console===");
         System.out.println("Tracked shared expense with friends.");
         System.out.println("");
         System.out.println("Ready.More features coming in the next lesson");
@@ -62,6 +74,7 @@ public class  Splitwise{
 
                 case 2->{
                    addfriends(input,friends);
+
                 }
 
                 case 3->{
@@ -70,8 +83,10 @@ public class  Splitwise{
                     } else {
                         System.out.println("Friends:");
                         for (Friend friend : friends) {
-                            System.out.println("- %d:  %s.".formatted(friend.getId() ,friend.getName()));
+                            System.out.println(FriendDisplay.listLine(friend));
                         }
+
+
 
                     }
                 }
