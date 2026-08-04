@@ -1,10 +1,19 @@
+/**
+ * splitwise console application
+ */
+
 package app;
+
 
 import model.Friend;
 import model.ExpenseLine;
 
 import java.util.Scanner;
 import java.util.ArrayList;
+
+/**
+ * Splitwise console application for managing friends and expenses.
+ */
 public class  Splitwise{
 
      private static class FriendDisplay {
@@ -17,19 +26,34 @@ public class  Splitwise{
          }
      }
 
+    /**
+     * Adds a new friend.
+     * @param input Scanner object
+     * @param friends List of friends
+     */
 
-         public static void addfriends(Scanner input, ArrayList<Friend> friends) {
+     public static void addfriends(Scanner input, ArrayList<Friend> friends) {
+
              System.out.print("Friend name: ");
              String friendName = input.nextLine();
              Friend friend = new Friend(friendName);
              friends.add(friend);
              System.out.println(FriendDisplay.addedMessage(friend));
          }
+    /**
+     * Creates a Splitwise application object.
+     */
+    public Splitwise() {
+    }
 
 
-
+    /**
+     * Starts the Splitwise application.
+     * @param args command-line arguments
+     */
 
     public static void main(String[] args){
+
         System.out.println("===Splitwise-console===");
         System.out.println("Tracked shared expense with friends.");
         System.out.println("");
